@@ -26,14 +26,14 @@ public class Solution
     {
         //ввести с консоли несколько ключей (строк), пункт 7
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in) );
-        String s = reader.readLine();
+        String s = null;
         while (s.equals("cartoon") || s.equals("thriller") || s.equals("soapOpera"))
         {
+            s = reader.readLine();
             Movie movie = null;
             MovieFactory factory = new MovieFactory();
             movie = factory.getMovie(s);
             System.out.println(movie.getClass().getSimpleName());
-            s = reader.readLine();
         }
 
         /*
