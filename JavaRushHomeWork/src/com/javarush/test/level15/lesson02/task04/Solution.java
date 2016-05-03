@@ -8,7 +8,11 @@ package com.javarush.test.level15.lesson02.task04;
 5. В классе Book реализуйте тело метода getOutputByBookType так, чтобы он возвращал:
 5.1. agathaChristieOutput для книг Агаты Кристи;
 5.2. markTwainOutput для книг Марка Твена.
+check проверь
 */
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class Solution {
     public static void main(String[] args) {
@@ -35,6 +39,8 @@ public class Solution {
 
             String output = "output";
             //Add your code here
+            if (this instanceof AgathaChristieBook) output = agathaChristieOutput;
+            if (this instanceof MarkTwainBook) output = markTwainOutput;
 
             return output;
         }
@@ -42,5 +48,54 @@ public class Solution {
         public String toString() {
             return getOutputByBookType();
         }
+    }
+
+    public static class MarkTwainBook extends Book
+    {
+        private String book;
+        public MarkTwainBook(String book)
+        {
+            super("Mark Twain");
+            this.book = book;
+        }
+
+        @Override
+        public MarkTwainBook getBook()
+        {
+
+            return this;
+        }
+
+        @Override
+        public String getName()
+        {
+            return this.book;
+        }
+
+
+    }
+    public static class AgathaChristieBook extends Book
+    {
+        private String book;
+        public AgathaChristieBook(String book)
+        {
+            super("Agatha Christie");
+            this.book = book;
+        }
+
+        @Override
+        public AgathaChristieBook getBook()
+        {
+
+            return this;
+        }
+
+        @Override
+        public String getName()
+        {
+            return this.book;
+        }
+
+
     }
 }

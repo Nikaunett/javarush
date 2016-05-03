@@ -3,6 +3,7 @@ package com.javarush.test.level15.lesson02.task01;
 /* ООП - Расставить интерфейсы
 1. Добавить все возможные интерфейсы из Movable, Sellable, Discountable в класс Clothes.
 2. Реализовать их методы.
+проверить
 */
 
 public class Solution {
@@ -18,6 +19,18 @@ public class Solution {
         Object getAllowedAction();
     }
 
-    public static class Clothes {
+    public static class Clothes implements Movable, Discountable
+    {
+
+        public Object getAllowedAction()
+        {
+            return null;
+        }
+
+        @Override
+        public boolean getAllowedAction(String name)
+        {
+            return false;
+        }
     }
 }

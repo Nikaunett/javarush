@@ -11,6 +11,15 @@ package com.javarush.test.level15.lesson02.task02;
 */
 
 public class Solution {
+    //проверить
+   /* public static void main(String[] args)
+    {
+        Dragon d = new Dragon();
+        Goose g = new Goose();
+
+        System.out.println(d.getSize());
+        System.out.println(g.getSize());
+    }*/
     //добавьте классы Goose и Dragon тут
 
     public static class BigAnimal {
@@ -22,6 +31,22 @@ public class Solution {
     public static class SmallAnimal {
         String getSize() {
             return "как кошка";
+        }
+    }
+    public static class Goose extends SmallAnimal
+    {
+        @Override
+        public String getSize()
+        {
+            return "Гусь маленький, " + super.getSize();
+        }
+    }
+    public static class Dragon extends BigAnimal
+    {
+        @Override
+        public String getSize()
+        {
+            return "Дракон большой, " + super.getSize();
         }
     }
 }
